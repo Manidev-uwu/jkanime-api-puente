@@ -10,5 +10,8 @@
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "jkanime-v2": "latest"
+  },
+  "overrides": {
+    "cheerio": "1.0.0-rc.12"
   }
 }
