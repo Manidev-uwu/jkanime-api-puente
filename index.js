@@ -22,6 +22,16 @@ app.get('/api/latest', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+// Ruta de prueba para ver qué nos responde realmente JKAnime
+app.get('/api/diagnostico', async (req, res) => {
+  try {
+    const respuesta = await fetch('https://jkanime.net/');
+    const html = await respuesta.text();
+    res.send(html);
+  } catch (error) {
+    res.status(500).send("Error de red: " + error.message);
+  }
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
